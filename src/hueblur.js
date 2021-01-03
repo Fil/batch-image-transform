@@ -2,11 +2,10 @@
  * Reference code https://observablehq.com/@fil/hue-blur
  */
 
-const {blur} = require("array-blur");
-const {lab, rgb} = require("d3");
-const { createCanvas, loadImage } = require('canvas');
-
 module.exports = function hueblur(radius) {
+  const {blur} = require("array-blur");
+  const {lab, rgb} = require("d3");
+  
   return function (context) {
     // read pixels
     const w = context.canvas.width, h = context.canvas.height;

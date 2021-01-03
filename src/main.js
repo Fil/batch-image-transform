@@ -29,7 +29,7 @@ switch(commander.filter) {
     break;
 }
 
-fs.mkdirSync(commander.out);
+fs.mkdirSync(commander.out, {recursive: true});
 
 (async function() {
 
