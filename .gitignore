@@ -1,5 +1,5 @@
 node_modules/
 .DS_Store
-images-source/
-images-out/
+in/
+out/
 *~

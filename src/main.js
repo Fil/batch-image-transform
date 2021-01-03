@@ -1,5 +1,16 @@
 const fs = require('fs');
+const path = require('path');
 const { createCanvas, loadImage } = require('canvas')
+const commander = require("commander");
+const ConvertTiff = require('tiff-to-png');
+const tiff = new ConvertTiff();
+
+commander
+  .version(require("../package.json").version)
+  .usage("[options] [file]")
+  .option("-i, --in <dir>", "input dir name", "in")
+  .option("-o, --out <dir>", "output dir name", "out")
+  .parse(process.argv);
 
 const brain = require("brain.js");
 
@@ -9,17 +20,24 @@ model = new brain.NeuralNetwork().fromJSON(JSON.parse(canned));
 
 (async function() {
 
-fs.readdir("./images-source/", async (err, files) => {
+fs.readdir(commander.in, async (err, files) => {
   for (const f of files) {
-    if (f.match(/.jpg$/)) {
-      const image = "./images-source/" + f;
-      const dest = "./images-out/" + f + '.png';
-      await loadImage(image).then(async image => {
-        const canvas = transferImage(model, image);
-        const out = fs.createWriteStream(dest)
+    const r = f.match(/.(jpe?g|png|tiff?)$/);
+    if (r) {
+      console.warn("reading", path.resolve(commander.in, f));
+      let f0 = path.resolve(commander.in, f);
+      if (r[1] === "tiff" || r[1] === "tif") {
+        const dir = "/tmp/" + path.basename(f0, "." + r[1]);
+        await tiff.convertOne(f0, "/tmp/");
+        f0 = dir + "/0.png";
+      }
+      const dest = path.resolve(commander.out, path.basename(f, "." + r[1]) + ".png");
+      await loadImage(f0).then(async im => {
+        const out = fs.createWriteStream(dest);
+        const canvas = transferImage(im, model);
         canvas.createPNGStream().pipe(out);
         await new Promise(f => out.on('finish', f));
-        console.warn("ok", f);
+        console.warn("…", dest);
       });
     }
   }
@@ -27,7 +45,7 @@ fs.readdir("./images-source/", async (err, files) => {
 
 
 
-function transferImage(model, image) {
+function transferImage(image, model) {
   const w = image.naturalWidth, h = image.naturalHeight;
   
   const canvas0 = createCanvas(w, h)
