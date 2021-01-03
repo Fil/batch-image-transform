@@ -20,12 +20,12 @@ to get a list of options.
 
 ## Filters
 
-### * to png
+### convert to png
 
 when no filter is given, this just converts to png:
 
 ~~~js
-node index.js --in /path/to/inputs/ --out /path/to/outputs-blur-3/
+node index.js --in /path/to/inputs/ --out /path/to/outputs/
 ~~~
 
 ### hue blur
