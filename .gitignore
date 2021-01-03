@@ -3,3 +3,9 @@ node_modules/
 in/
 out/
 *~
+*.tif
+*.tiff
+*.png
+*.jpg
+*.jpeg
+

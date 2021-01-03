@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "array-blur": "1",
     "brain.js": "^2.0.0-beta.2",
     "canvas": "2",
     "commander": "2",

@@ -45,6 +45,11 @@ are-we-there-yet@~1.1.2:
     delegates "^1.0.0"
     readable-stream "^2.0.6"
 
+array-blur@1:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/array-blur/-/array-blur-1.1.0.tgz#8e4aa6431def647a8553e4fd4d68494c05d75fb4"
+  integrity sha512-ofd/9uPKytK4EExL6VAYvgFFjldXG8N/ShQ95DGxEp/UQzrzeGQuZETAhF6HuFRH1hStU1zZOMksIiJx8DXf1Q==
+
 asn1@~0.2.3:
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/asn1/-/asn1-0.2.4.tgz#8d2475dfab553bb33e77b54e59e880bb8ce23136"
