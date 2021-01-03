@@ -2,13 +2,6 @@
 # yarn lockfile v1
 
 
-"@observablehq/stdlib@^3.4.0":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@observablehq/stdlib/-/stdlib-3.4.0.tgz#9da9894b91271fc41c0a92c494f62bdbec47135f"
-  integrity sha512-kqc/ls4BeNQ6rUAqn2HmESpnWJewQkbSGXYqfpTUe/39/gKaRmiur7ktw8Mqtp930Yr5B1iovwPeADUlVqAOFg==
-  dependencies:
-    d3-require "^1.2.4"
-
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -191,11 +184,6 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
-
-d3-require@^1.2.4:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/d3-require/-/d3-require-1.2.4.tgz#59afc591d5089f99fecd8c45ef7539e1fee112b3"
-  integrity sha512-8UseEGCkBkBxIMouLMPONUBmU8DUPC1q12LARV1Lk/2Jwa32SVgmRfX8GdIeR06ZP+CG85YD3N13K2s14qCNyA==
 
 dashdash@^1.12.0:
   version "1.14.1"

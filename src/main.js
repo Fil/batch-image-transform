@@ -1,7 +1,4 @@
 const fs = require('fs');
-const {Library} = require("@observablehq/stdlib");
-const library = new Library();
-const {DOM, Files} = library;
 const { createCanvas, loadImage } = require('canvas')
 
 const brain = require("brain.js");

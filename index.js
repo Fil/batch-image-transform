@@ -1,2 +1,2 @@
-import * from "src/main.js";
+require("./src/main.js");
 
