@@ -1,4 +1,4 @@
-# batch image filter
+# batch image transform
 
 Use this code to read images from a directory, transform them with something,
 and export the result in another directory.
