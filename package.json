@@ -1,0 +1,13 @@
+{
+  "name": "color-transfer-video",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@observablehq/stdlib": "^3.4.0",
+    "brain.js": "^2.0.0-beta.2",
+    "canvas": "2",
+    "filereader": "^0.10.3",
+    "fs": "^0.0.1-security"
+  }
+}
